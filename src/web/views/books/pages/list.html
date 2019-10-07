@@ -1,0 +1,22 @@
+{% extends '../../layouts/layout.html' %} {% block title %} 图书列表页 {%
+endblock %} {% block content %}
+<div>
+  <h1>图书列表页</h1>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th>编号</th>
+      <th>书名</th>
+      <th>作者</th>
+      <th>价格</th>
+    </tr>
+    {% for val in data %}
+    <tr>
+      <td>[[val.name]]</td>
+      <td>[[val.name]]</td>
+      <td>[[val.author]]</td>
+      <td>[[val.price]]</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

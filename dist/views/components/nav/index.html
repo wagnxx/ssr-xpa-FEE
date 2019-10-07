@@ -1,0 +1,24 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" data-path="/books"><a href="/books">首页</a></li>
+  <li role="presentation" data-path="/books/list">
+    <a href="/books/list">图书列表</a>
+  </li>
+  <li role="presentation" data-path="/books/add">
+    <a href="/books/add">添加图书</a>
+  </li>
+</ul>
+
+<script>
+  const pathname = window.location.pathname;
+  const matchPath = ['/books/list', '/books/add', '/books'];
+  for (const path in matchPath) {
+    if (matchPath.hasOwnProperty(path)) {
+      const element = matchPath[path];
+
+      if (pathname.startsWith(element)) {
+        $(`li[data-path='${element}']`).addClass('active');
+        break;
+      }
+    }
+  }
+</script>
